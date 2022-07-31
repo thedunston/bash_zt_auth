@@ -1,4 +1,4 @@
-#!?bin/basho
+#!/bin/bash
 
 # Checks to see if a node is set to expire.
 
