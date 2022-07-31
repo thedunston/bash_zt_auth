@@ -1,5 +1,7 @@
 # ZT AUTH
 
+Status: Actively Supported.
+
 ZeroTier, by default, requires approval for each peer that wants to connect to a ZT network.  Once the peer is connected then it requires manual methods to remove it.
 
 I wanted the ability to use ZT like a VPN for remote users and not have to manually deauthorize them after a given period of time.
