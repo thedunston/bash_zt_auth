@@ -16,7 +16,7 @@ ZT Auth uses SSH for authentication.
 
 ### Why SSH?
 
-SSH is a very stable and robust application and protocol.  It has support for two-factor authentication, key-based authentication, etc.  It uses the native Linux authentication mechanisms, namely PAM, and account management is handled by the OS.  Additionally, obtaining access to a server running SSH only is relatively inexpensive.  Datapacket.net and DigitalOcean have VMs for less than $5/month.  However, port forwarding to a container provides a method of public access to an SSH server when running inside of a container.
+SSH is a very stable and robust application. It has support for two-factor authentication, key-based authentication, etc.  It uses the native Linux authentication mechanisms, namely PAM, and account management is handled by the OS.  Additionally, obtaining access to a server running SSH is relatively inexpensive. Datapacket.net and DigitalOcean have VMs for less than $5/month.
 
 It is recommended to use SSH Key-based authentication along with a second factor. By using key-based authentication, the user's public key can be prepended with the 'forced command' option to only allow one command to be run when a user authenticates and then the session is dropped. For this project, key-based authentication is required.
 
@@ -34,7 +34,7 @@ Copy the file *zt-deauth.sh* to the /etc/cron.hourly directory and make it execu
 
 `chmod +x /etc/cron.hourly/zt-deauth.sh`
 
-Every hour, each node's last login will be checked to see if the number of hours have passed when it will be expired.
+Every hour, each node's last authorization timestamp will be checked to see if the number of hours have passed when it will be expired.
 
 Then copy the zt_auth.sh script anywhere you like.
 
@@ -64,4 +64,4 @@ The file to be created or updated will be one of the SSH users.  When they login
 
 `echo 1 > /activate/abcdef7890`
 
-will be executed and the session will immediately terminate.
+will be executed and the SSH session will immediately terminate.
